@@ -1,0 +1,21 @@
+﻿@AspireApp1.ApiService_HostAddress = http://localhost:5396
+
+GET {{AspireApp1.ApiService_HostAddress}}/weatherforecast
+
+###
+
+GET {{AspireApp1.ApiService_HostAddress}}/weatherforecast
+
+###
+
+GET {{AspireApp1.ApiService_HostAddress}}/weatherforecast
+
+###
+
+GET {{AspireApp1.ApiService_HostAddress}}/weatherforecast
+
+###
+
+GET {{AspireApp1.ApiService_HostAddress}}/api/values
+
+###

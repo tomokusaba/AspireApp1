@@ -1,0 +1,25 @@
+﻿@page "/book"
+@using AspireApp1.ApiService.Data
+@using Microsoft.AspNetCore.Components.QuickGrid
+
+@inject BookApiClient BookApiClient
+<h3>Book</h3>
+
+<QuickGrid Items="@books" TGridItem="Books">
+    <PropertyColumn Property="p => p.Title" />
+    <PropertyColumn Property="p => p.Author" />
+    <PropertyColumn Property="p => p.Description" />
+    <PropertyColumn Property="p => p.Genre" />
+    <PropertyColumn Property="p => p.Publisher" />
+    <PropertyColumn Property="p => p.PublishedDate" />
+    <PropertyColumn Property="p => p.ISBN" />
+</QuickGrid>
+
+@code {
+    private IQueryable<Books>? books;
+
+    protected override async Task OnInitializedAsync()
+    {
+        books = (await BookApiClient.GetBooksAsync()).AsQueryable();
+    }
+}
